@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Shield, Sun, Phone, MapPin, FileText, Building } from 'lucide-react';
+import { Shield, Sun, Phone, MapPin, FileText, Building, Menu, X } from 'lucide-react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -38,22 +38,26 @@ const TopBar = () => (
 
 const Navbar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
   const isActive = (path) => location.pathname === path ? { color: 'var(--accent-color)' } : {};
 
   return (
     <nav className="navbar">
-      <div className="container">
+      <div className="container" style={{ position: 'relative' }}>
         <Link to="/" className="navbar-brand">
           <Shield size={32} color="var(--accent-color)" />
           <span>SHIELD SAVIOURS</span>
         </Link>
-        <div className="nav-links">
-          <Link style={isActive('/')} to="/">Home</Link>
-          <Link style={isActive('/about')} to="/about">About Us</Link>
-          <Link style={isActive('/news')} to="/news">News</Link>
-          <Link style={isActive('/gallery')} to="/gallery">Photo Gallery</Link>
-          <Link style={isActive('/interviews')} to="/interviews">Interviews</Link>
-          <Link style={isActive('/membership')} to="/membership" style={{ color: 'var(--accent-color)', fontWeight: 'bold' }}>Membership Form</Link>
+        <div className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} style={{ display: 'none', cursor: 'pointer', color: 'var(--primary-color)' }}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </div>
+        <div className={`nav-links ${isOpen ? 'active' : ''}`}>
+          <Link style={isActive('/')} to="/" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link style={isActive('/about')} to="/about" onClick={() => setIsOpen(false)}>About Us</Link>
+          <Link style={isActive('/news')} to="/news" onClick={() => setIsOpen(false)}>News</Link>
+          <Link style={isActive('/gallery')} to="/gallery" onClick={() => setIsOpen(false)}>Photo Gallery</Link>
+          <Link style={isActive('/interviews')} to="/interviews" onClick={() => setIsOpen(false)}>Interviews</Link>
+          <Link style={{ ...isActive('/membership'), color: 'var(--accent-color)', fontWeight: 'bold' }} to="/membership" onClick={() => setIsOpen(false)}>Membership Form</Link>
         </div>
       </div>
     </nav>

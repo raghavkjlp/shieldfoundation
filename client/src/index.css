@@ -288,3 +288,44 @@ ul { list-style: none; }
   line-height: 1.4;
 }
 
+/* Additional Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block !important; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    padding: 1rem;
+    box-shadow: var(--shadow-md);
+    gap: 1.5rem !important;
+    align-items: center !important;
+    border-top: 1px solid #e2e8f0;
+  }
+  .nav-links.active {
+    display: flex !important;
+  }
+  
+  /* Typography */
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1rem; }
+  .section-title { font-size: 2rem; }
+  .cta-banner h2 { font-size: 2rem; }
+  .stats-ribbon .stat-item h3 { font-size: 2.5rem; }
+  .about-hero h1 { font-size: 2.2rem; }
+  
+  /* Spacing */
+  .hero { padding: 6rem 0 4rem; }
+  .about-hero { padding: 4rem 0 3rem; }
+  .section { padding: 3rem 0; }
+  .cta-banner { padding: 3rem 0; }
+  
+  /* Layout Adjustments */
+  .dedicated-content h2 { font-size: 2rem; }
+  .dedicated-features { grid-template-columns: 1fr; gap: 1rem; }
+  .youtube-banner { padding: 2rem 1rem; margin-bottom: -3rem; }
+  .youtube-banner h1 { font-size: 2rem !important; }
+}
