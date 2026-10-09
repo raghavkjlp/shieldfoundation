@@ -19,15 +19,16 @@ const News = () => {
   }, []);
 
   return (
-    <div className="section container">
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h2 className="section-title" style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
-          <Newspaper size={36} color="var(--primary-color)" /> Latest News & Updates
-        </h2>
-        <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-muted)' }}>
-          Stay informed about our recent events, press releases, and media coverage highlighting our continuous efforts on the ground.
-        </p>
-      </div>
+    <div>
+      <section className="about-hero">
+        <div className="container text-center animate-fade-in">
+          <span className="hero-badge"><Newspaper size={16}/> LATEST UPDATES</span>
+          <h1>Latest News & Updates</h1>
+          <p>Stay informed about our recent events, press releases, and media coverage highlighting our continuous efforts on the ground.</p>
+        </div>
+      </section>
+
+      <div className="section container">
 
       <div className="grid grid-cols-3">
         {news.map((item) => (
@@ -48,6 +49,7 @@ const News = () => {
           <p>No news updates have been posted yet. Check back soon!</p>
         </div>
       )}
+      </div>
     </div>
   );
 };

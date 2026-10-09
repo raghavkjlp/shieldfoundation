@@ -28,14 +28,13 @@ const Interviews = () => {
   return (
     <div>
       {/* Top YouTube Banner */}
-      <section className="section section-bg" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
-        <div className="container text-center">
-          <div className="youtube-banner">
-            <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>Visit Our YouTube Channel</h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto 2.5rem' }}>
-              Stay updated with our latest interviews, media coverage, and on-ground activities by subscribing to our official channel.
-            </p>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="btn btn-youtube">
+      <section className="about-hero">
+        <div className="container text-center animate-fade-in">
+          <span className="hero-badge"><PlayCircle size={16}/> INTERVIEWS</span>
+          <h1>Visit Our YouTube Channel</h1>
+          <p>Stay updated with our latest interviews, media coverage, and on-ground activities by subscribing to our official channel.</p>
+          <div style={{ marginTop: '2rem' }}>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="btn btn-youtube" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FF0000', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold' }}>
               <PlayCircle size={24} /> Subscribe & Watch on YouTube
             </a>
           </div>

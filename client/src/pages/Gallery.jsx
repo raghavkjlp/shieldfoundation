@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Image } from 'lucide-react';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -18,13 +19,16 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="section container">
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h2 className="section-title" style={{ marginBottom: '1rem' }}>Photo & Video Gallery</h2>
-        <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-muted)' }}>
-          Explore the impactful moments and our continuous efforts towards a better society through our live updated gallery powered by ImageKit & YouTube.
-        </p>
-      </div>
+    <div>
+      <section className="about-hero">
+        <div className="container text-center animate-fade-in">
+          <span className="hero-badge"><Image size={16}/> MEDIA</span>
+          <h1>Photo & Video Gallery</h1>
+          <p>Explore the impactful moments and our continuous efforts towards a better society through our live updated gallery powered by ImageKit & YouTube.</p>
+        </div>
+      </section>
+
+      <div className="section container">
 
       <div className="grid grid-cols-3">
         {images.map((img) => (
@@ -45,6 +49,7 @@ const Gallery = () => {
           <p>No photos have been uploaded yet. Go to the Admin panel to upload some!</p>
         </div>
       )}
+      </div>
     </div>
   );
 };
