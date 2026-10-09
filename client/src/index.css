@@ -315,17 +315,18 @@ ul { list-style: none; }
   .youtube-banner { padding: 2rem 1rem; margin-bottom: -3rem; }
   .youtube-banner h1 { font-size: 2rem !important; }
   
-  .stats-grid, .price-grid, .obj-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .aims-grid { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 992px) {
   .stats-grid, .price-grid { grid-template-columns: repeat(2, 1fr); }
   .dedicated-grid { grid-template-columns: 1fr; }
   .obj-grid { grid-template-columns: repeat(2, 1fr); }
   .price-card.popular { transform: none; }
   .price-card.popular:hover { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+  .stats-grid, .price-grid, .obj-grid { grid-template-columns: 1fr !important; }
+  .about-grid { grid-template-columns: 1fr !important; }
+  .aims-grid { grid-template-columns: 1fr !important; }
 }
 
 html, body { overflow-x: hidden; width: 100%; }
