@@ -54,7 +54,7 @@ const Membership = () => {
       if (aadhaarBackRef.current.files[0]) data.append('aadhaarBack', aadhaarBackRef.current.files[0]);
       if (panCardRef.current.files[0]) data.append('panCard', panCardRef.current.files[0]);
 
-      const response = await fetch('http://localhost:5000/api/memberships', {
+      const response = await fetch('https://shieldfoundation.onrender.com/api/memberships', {
         method: 'POST',
         body: data,
       });

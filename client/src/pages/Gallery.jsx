@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://shieldfoundation.onrender.com/api';
 
   useEffect(() => {
     const fetchImages = async () => {

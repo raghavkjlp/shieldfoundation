@@ -3,7 +3,7 @@ import { Newspaper } from 'lucide-react';
 
 const News = () => {
   const [news, setNews] = useState([]);
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://shieldfoundation.onrender.com/api';
 
   useEffect(() => {
     const fetchNews = async () => {
