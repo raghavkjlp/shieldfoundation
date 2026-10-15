@@ -25,7 +25,10 @@ const TopBar = () => (
       <div className="top-bar-right">
         <div className="top-bar-item">
           <Phone size={16} />
-          <span>+91 82644 65684</span>
+          <span>
+            <a href="tel:+918264465684">+91 82644 65684</a>,{' '}
+            <a href="tel:+919914404142">+91 99144 04142</a>
+          </span>
         </div>
         <div className="top-bar-item">
           <MapPin size={16} />
@@ -116,7 +119,10 @@ const Footer = () => (
           </div>
           <div className="footer-contact-item">
             <Phone size={20} />
-            <span>+91 82644 65684</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <a href="tel:+918264465684">+91 82644 65684</a>
+              <a href="tel:+919914404142">+91 99144 04142</a>
+            </div>
           </div>
         </div>
       </div>

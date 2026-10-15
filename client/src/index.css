@@ -743,6 +743,15 @@ ul {
   color: var(--accent-light);
 }
 
+.top-bar-item a {
+  transition: color 0.2s ease;
+}
+
+.top-bar-item a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .top-bar .container {
     flex-direction: column;
@@ -819,6 +828,15 @@ ul {
   flex-shrink: 0;
   color: var(--accent-color);
   margin-top: 0.2rem;
+}
+
+.footer-contact-item a {
+  transition: color 0.2s ease;
+}
+
+.footer-contact-item a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
