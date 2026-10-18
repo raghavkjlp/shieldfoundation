@@ -11,7 +11,7 @@ const Home = () => {
           <h1>Shield Saviours Foundation</h1>
           <p>Working for Anti-Corruption, Legal Literacy & Human Rights. Registered under Govt. of India & NITI Aayog.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link to="/membership" className="btn btn-primary"><Users size={20} /> Join As Authorized Member</Link>
+            <Link to="/membership" className="btn btn-primary btn-blink"><Users size={20} /> Join As Authorized Member</Link>
             <Link to="/about" className="btn btn-secondary"><ShieldCheck size={20} /> Explore Our Mission</Link>
           </div>
         </div>
