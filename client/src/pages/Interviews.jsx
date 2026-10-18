@@ -3,6 +3,7 @@ import { PlayCircle } from 'lucide-react';
 
 const Interviews = () => {
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
   const API_URL = 'https://shieldfoundation.onrender.com/api';
 
   useEffect(() => {
@@ -13,6 +14,8 @@ const Interviews = () => {
         if(Array.isArray(data)) setVideos(data);
       } catch (error) {
         console.error('Failed to fetch videos', error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchVideos();
@@ -48,31 +51,39 @@ const Interviews = () => {
             Featured Interviews
           </h2>
 
-          <div className="video-grid">
-            {videos.map((vid) => {
-              const videoId = getYouTubeId(vid.url);
-              if (!videoId) return null;
-              
-              return (
-                <div key={vid._id} className="video-card">
-                  <iframe 
-                    width="100%" 
-                    height="240" 
-                    src={`https://www.youtube.com/embed/${videoId}`} 
-                    title={vid.title || "YouTube video player"} 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen>
-                  </iframe>
-                </div>
-              );
-            })}
-          </div>
-
-          {videos.length === 0 && (
-            <div className="text-center text-muted mt-8">
-              <p>No interviews uploaded yet. Add YouTube links from the Admin panel.</p>
+          {loading ? (
+            <div className="text-center mt-8">
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>Loading interviews...</p>
             </div>
+          ) : (
+            <>
+              <div className="video-grid">
+                {videos.map((vid) => {
+                  const videoId = getYouTubeId(vid.url);
+                  if (!videoId) return null;
+                  
+                  return (
+                    <div key={vid._id} className="video-card">
+                      <iframe 
+                        width="100%" 
+                        height="240" 
+                        src={`https://www.youtube.com/embed/${videoId}`} 
+                        title={vid.title || "YouTube video player"} 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen>
+                      </iframe>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {videos.length === 0 && (
+                <div className="text-center text-muted mt-8">
+                  <p>No interviews uploaded yet. Add YouTube links from the Admin panel.</p>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

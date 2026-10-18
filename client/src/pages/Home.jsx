@@ -11,8 +11,8 @@ const Home = () => {
           <h1>Shield Saviours Foundation</h1>
           <p>Working for Anti-Corruption, Legal Literacy & Human Rights. Registered under Govt. of India & NITI Aayog.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link to="/admin" className="btn btn-primary"><Users size={20} /> Join As Authorized Member</Link>
-            <a href="#mission" className="btn btn-secondary"><ShieldCheck size={20} /> Explore Our Mission</a>
+            <Link to="/membership" className="btn btn-primary"><Users size={20} /> Join As Authorized Member</Link>
+            <Link to="/about" className="btn btn-secondary"><ShieldCheck size={20} /> Explore Our Mission</Link>
           </div>
         </div>
       </section>
@@ -71,7 +71,7 @@ const Home = () => {
               </div>
             </div>
             <div style={{ marginTop: '3rem' }}>
-              <button className="btn btn-primary"><Users size={20} /> JOIN NOW</button>
+              <Link to="/membership" className="btn btn-primary btn-blink"><Users size={20} /> JOIN NOW</Link>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ const Home = () => {
         <div className="container">
           <h2>Ready to Make a Real Impact?</h2>
           <p>Fill out the official membership form today, submit your oath, and start serving the nation under lawful authority.</p>
-          <button className="btn btn-primary"><FileSignature size={20} /> Fill Membership Form</button>
+          <Link to="/membership" className="btn btn-primary"><FileSignature size={20} /> Fill Membership Form</Link>
         </div>
       </div>
     </div>

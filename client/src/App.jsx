@@ -60,7 +60,7 @@ const Navbar = () => {
           <Link style={isActive('/news')} to="/news" onClick={() => setIsOpen(false)}>News</Link>
           <Link style={isActive('/gallery')} to="/gallery" onClick={() => setIsOpen(false)}>Photo Gallery</Link>
           <Link style={isActive('/interviews')} to="/interviews" onClick={() => setIsOpen(false)}>Interviews</Link>
-          <Link style={{ ...isActive('/membership'), color: 'var(--accent-color)', fontWeight: 'bold' }} to="/membership" onClick={() => setIsOpen(false)}>Membership Form</Link>
+          <Link style={{ ...isActive('/membership'), color: 'var(--accent-color)', fontWeight: 'bold' }} to="/membership" onClick={() => setIsOpen(false)} className="btn-blink">Membership Form</Link>
         </div>
       </div>
     </nav>

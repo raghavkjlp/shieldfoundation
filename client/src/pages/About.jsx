@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle, Shield } from 'lucide-react';
 
 const About = () => {
@@ -66,7 +67,7 @@ const About = () => {
               </ul>
               
               <div className="mt-8 text-right">
-                <button className="btn btn-primary">JOIN NOW</button>
+                <Link to="/membership" className="btn btn-primary btn-blink">JOIN NOW</Link>
               </div>
             </div>
           </div>
